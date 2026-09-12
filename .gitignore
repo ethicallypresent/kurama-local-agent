@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Build output (regenerable via scripts/publish_portable.py)
+dist/
+ui/KuramaStudio/bin/
+ui/KuramaStudio/obj/
+
+# Model weights — large binaries, not source
+models/*.gguf
+ui/KuramaStudio/Models/*.gguf
+
+# Vendored llama.cpp runtime — large third-party binaries, not source.
+# Fetch/copy these into tools/bin/ separately rather than tracking in git.
+tools/bin/*.dll
+tools/bin/*.exe
+
+# Runtime state / generated data (kept: db/schema.sql)
+db/*.sqlite
+db/*.json
+db/*.bak
+brain/reasoning_config.json.bak
+
+# Logs and scratch output
+workspace/*.log
+workspace/_tmp_*/
+workspace/*.txt
+
+# Editor/OS cruft
+.vscode/
+.idea/
+Thumbs.db
+
+# Claude Code local session settings (per-developer, not shared config)
+.claude/settings.local.json
+
+# Stale/unused local config override + ad-hoc debug scratch dir
+brain/reasoning_config.local.json
+_tmp_propose_debug/

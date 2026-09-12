@@ -1,0 +1,68 @@
+{
+  "tools": [
+    {
+      "name": "read_file",
+      "core": true,
+      "description": "Read a UTF-8 text file inside the agent workspace or skill drafts.",
+      "args": {
+        "path": {"type": "string", "required": true},
+        "max_chars": {"type": "integer", "default": 20000}
+      }
+    },
+    {
+      "name": "write_file",
+      "core": true,
+      "description": "Write a UTF-8 text file under workspace/ or skills/drafts/ only.",
+      "args": {
+        "path": {"type": "string", "required": true},
+        "content": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "list_dir",
+      "core": true,
+      "description": "List files in a directory under the agent root.",
+      "args": {
+        "path": {"type": "string", "required": true},
+        "glob": {"type": "string", "default": "*"}
+      }
+    },
+    {
+      "name": "web_search",
+      "core": true,
+      "description": "Search the public web. Returns titles, urls, snippets. Offline stub if no key.",
+      "args": {
+        "query": {"type": "string", "required": true},
+        "num_results": {"type": "integer", "default": 5}
+      }
+    },
+    {
+      "name": "fetch_url",
+      "core": true,
+      "description": "Fetch a public HTTP URL and return truncated text.",
+      "args": {
+        "url": {"type": "string", "required": true},
+        "max_chars": {"type": "integer", "default": 12000}
+      }
+    },
+    {
+      "name": "run_python",
+      "core": true,
+      "description": "Run a short Python snippet in a subprocess with timeout and no extra env.",
+      "args": {
+        "code": {"type": "string", "required": true},
+        "timeout_sec": {"type": "integer", "default": 15}
+      }
+    },
+    {
+      "name": "run_skill",
+      "core": true,
+      "description": "Execute an approved (or explicitly drafted) skill by name.",
+      "args": {
+        "name": {"type": "string", "required": true},
+        "args": {"type": "object", "default": {}},
+        "allow_draft": {"type": "boolean", "default": false}
+      }
+    }
+  ]
+}
