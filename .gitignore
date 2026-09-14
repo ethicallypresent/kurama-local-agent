@@ -10,6 +10,7 @@ ui/KuramaStudio/obj/
 
 # Model weights — large binaries, not source
 models/*.gguf
+models/*.gguf.part
 ui/KuramaStudio/Models/*.gguf
 
 # Vendored llama.cpp runtime — large third-party binaries, not source.
